@@ -1,79 +1,96 @@
-ReconBot - Auditor de Seguridad Automatizado
-============================================
+# ReconBot - Auditor de Seguridad Automatizado 🔍🤖
 
-Autor: Yoyiuwu23  
-Versión: 1.0  
-Licencia: GNU General Public License v3.0  
-Repositorio: https://github.com/Yoyiuwu23/epe2-seguridad-informatica
+![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python) 
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue?logo=docker) 
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg) 
+![Status](https://img.shields.io/badge/Estado-En%20Desarrollo-yellow)
+![GitHub last commit](https://img.shields.io/github/last-commit/Yoyiuwu23/epe2-seguridad-informatica)
 
-Descripción
------------
+Herramienta de auditoría pasiva que analiza sitios web y estima su nivel de seguridad en una escala de 0 a 100.
 
-ReconBot es un bot de auditoría pasiva que analiza sitios web públicos y estima cuán seguros son en una escala de 0 a 100. Está orientado a fines académicos, como parte de una evaluación en seguridad informática. Esta es la primera versión funcional del proyecto.
+**Repositorio**: [https://github.com/Yoyiuwu23/epe2-seguridad-informatica](https://github.com/Yoyiuwu23/epe2-seguridad-informatica)
 
-El bot combina técnicas clásicas de recolección de información (reconocimiento pasivo) con una capa de análisis semántico asistido por IA. Realiza búsquedas dorking en Google, consultas DNS, obtención de datos WHOIS y evalúa configuraciones de seguridad comunes. Luego, calcula una puntuación de seguridad y genera un informe en varios formatos.
+## 📌 Descripción
 
-Características
----------------
+ReconBot es un bot de auditoría pasiva que combina técnicas clásicas de recolección de información con análisis semántico asistido por IA. 
 
-- Escaneo DNS (registros A, MX, TXT, NS, SOA)
-- Consulta WHOIS para dominios
-- Dorking automatizado con Google
-- Análisis semántico de resultados mediante API externa de IA
-- Sistema de puntaje de seguridad del 0 al 100
-- Generación de informes en HTML, JSON o consola
-- Contenerizado con Docker y Docker Compose
+🚀 **Perfecto para fines académicos** - Desarrollado como parte de una evaluación en seguridad informática.
 
-Requisitos
-----------
+🔎 **Funcionalidades clave**:
+- Escaneo DNS completo
+- Consultas WHOIS
+- Dorking automatizado
+- Análisis con IA
+- Sistema de puntuación inteligente
 
-- Python 3.8 o superior
+## 🌟 Características
+
+| Módulo           | Descripción                                  |
+|------------------|--------------------------------------------|
+| **Escaneo DNS**  | Registros A, MX, TXT, NS, SOA              |
+| **WHOIS**        | Información detallada del dominio          |
+| **Dorking**      | Búsquedas automatizadas en Google          |
+| **Análisis IA**  | Evaluación semántica de vulnerabilidades   |
+| **Informes**     | Generación en HTML, JSON y consola         |
+
+## 🛠️ Requisitos
+
+- Python 3.8+
 - Docker y Docker Compose
-- Acceso a Internet (para resolver dominios y enviar peticiones HTTP)
+- Conexión a Internet
 
-Instalación y uso rápido
-------------------------
+## 🚀 Instalación Rápida
 
-1. Clona este repositorio:
+# 1. Clonar repositorio
+git clone https://github.com/Yoyiuwu23/epe2-seguridad-informatica.git
+cd epe2-seguridad-informatica
 
-   git clone https://github.com/Yoyiuwu23/epe2-seguridad-informatica.git  
-   cd epe2-seguridad-informatica
+# 2. Iniciar contenedores
+docker-compose up -d --build
 
-2. Construye los contenedores e inicia los servicios en segundo plano:
+# 3. Ejecutar análisis
+docker-compose run --rm bot python reconbot.py ejemplo.com --format html
 
-   docker-compose up -d --build
+Formatos disponibles: html, json, console
+🗂️ Estructura del Proyecto
 
-3. Ejecuta el bot:
+📦 epe2-seguridad-informatica
+├── 📂 api/ # API de análisis con IA
+│ ├── 📂 api/ # Configuración Django
+│ │ ├── init.py
+│ │ ├── settings.py ⚙️ Configuración
+│ │ ├── urls.py 🌐 Rutas principales
+│ │ └── wsgi.py 🚀 WSGI config
+│ ├── 📂 app/ # Aplicación principal
+│ │ ├── init.py
+│ │ ├── 📂 utils/
+│ │ │ └── deepseek.py 🔍 Integración con DeepSeek
+│ │ └── views.py 🖥️ Vistas API
+│ ├── Dockerfile 🐳 Config contenedor API
+│ ├── manage.py ⚒️ CLI Django
+│ └── requirements.txt 📦 Dependencias Python
+│
+├── 📂 bot/ # Cliente de auditoría
+│ ├── Dockerfile 🐳 Config contenedor Bot
+│ ├── reconbot.py 🤖 Lógica principal
+│ └── requirements.txt 📦 Dependencias Python
+│
+├── docker-compose.yml 🐙 Orquestación contenedores
+├── LICENSE 📜 Licencia GPLv3
+├── README.md 📖 Documentación
+└── 📂 reports/ 📊 Informes generados
 
-   docker-compose run --rm bot python reconbot.py ejemplo.com --format html
+📜 Licencia
 
-   Puedes cambiar el formato por:  
-   - html  
-   - json  
-   - console
+Este proyecto está bajo Licencia GPLv3.
 
-4. Control de servicios individuales:
+Copyright (C) 2023 Yoyiuwu23
 
-   docker-compose start bot        # Inicia solo el bot  
-   docker-compose stop api         # Detiene solo la API
+Este programa es software libre: puedes redistribuirlo y/o modificar
+bajo los términos de la GNU General Public License.
 
-Estructura del Proyecto
-------------------------
+📧 Contacto
 
-- reconbot.py → Lógica principal del bot
-- Dockerfile → Imagen del contenedor del bot
-- docker-compose.yml → Orquestación de contenedores
-- api/ → Carpeta para el backend de análisis semántico con IA
-- reports/ → Carpeta donde se almacenan los informes generados
+Proyecto académico desarrollado por Yoyiuwu23 para la asignatura de Seguridad Informática.
 
-Licencia
---------
-
-Este proyecto se distribuye bajo la Licencia Pública General GNU v3.0.  
-Puedes ver el texto completo de la licencia en el archivo LICENSE.txt o en:  
-https://www.gnu.org/licenses/gpl-3.0.txt
-
-Contacto
---------
-
-Proyecto estudiantil creado por Yoyiuwu23 como parte de una evaluación de la asignatura Seguridad Informática.
+GitHub

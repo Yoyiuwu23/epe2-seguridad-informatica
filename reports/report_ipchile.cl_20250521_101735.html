@@ -1,0 +1,86 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Reporte - ipchile.cl</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 2em; }
+                h1 { color: #2c3e50; }
+                .section { background: #f8f9fa; padding: 1em; border-radius: 5px; margin-bottom: 1em; }
+                .score { font-size: 1.5em; font-weight: bold; }
+                .score-A { color: #27ae60; }
+                .score-B { color: #f39c12; }
+                .score-C { color: #e67e22; }
+                .score-D { color: #d35400; }
+                .score-F { color: #c0392b; }
+            </style>
+        </head>
+        <body>
+            <h1>Reporte de Seguridad</h1>
+            <div class="section">
+                <h2>ipchile.cl</h2>
+                <p>Fecha: 2025-05-21T10:17:35.276407</p>
+                <p class="score score-C">
+                    Puntaje: 45/100 (C)
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>DNS</h2>
+                <pre>{
+  "A": "Error: The DNS response does not contain an answer to the question: ipchile.cl. IN A",
+  "MX": [
+    "0 ipchile-cl.mail.protection.outlook.com."
+  ],
+  "NS": [
+    "ns2.ipchile.cl.",
+    "ns1.ipchile.cl."
+  ],
+  "SOA": [
+    "ns1.ipchile.cl. hostmaster.ipchile.cl. 2019110405 7200 3600 1814400 3600"
+  ],
+  "TXT": [
+    "\"v=spf1 include:spf.protection.outlook.com ip4:181.118.166.128/26 ip4:181.118.167.64/26 include:spf.mandrillapp.com ~all\"",
+    "\"VCvwVsBY6/3hGyxzbbXehW2RSI5afg7yuv3pAQ3M6bHiJTjGkjLG5jN4nTHq6ee8RGPv7zjwpTA2LBmczgOM4g==\"",
+    "\"mandrill_verify.oDKbgLHoJIPrOzXiofAb2Q\"",
+    "\"mandrill_verify.N6dodNc2hHN5-izTDHNI8w\"",
+    "\"facebook-domain-verification=utc26ufxpyzof4nepoppve2djjzfpy\""
+  ]
+}</pre>
+            </div>
+
+            <div class="section">
+                <h2>WHOIS</h2>
+                <pre>{
+  "error": "unsupported operand type(s) for -: \u0027datetime.datetime\u0027 and \u0027str\u0027"
+}</pre>
+            </div>
+
+            
+            <div class="section">
+                <h3>Dork: config_files</h3>
+                <p><strong>Query:</strong> site:ipchile.cl filetype:env OR filetype:config OR filetype:ini</p>
+                
+                <p>No se encontraron resultados</p>
+                
+            </div>
+            
+            <div class="section">
+                <h3>Dork: exposed_dirs</h3>
+                <p><strong>Query:</strong> site:ipchile.cl intitle:'index of' OR 'directory listing'</p>
+                
+                <p>No se encontraron resultados</p>
+                
+            </div>
+            
+            <div class="section">
+                <h3>Dork: sensitive_files</h3>
+                <p><strong>Query:</strong> site:ipchile.cl ext:sql OR ext:bak OR ext:old OR ext:log</p>
+                
+                <p>No se encontraron resultados</p>
+                
+            </div>
+            
+        </body>
+        </html>
+        

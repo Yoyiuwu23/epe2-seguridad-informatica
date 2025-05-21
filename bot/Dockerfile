@@ -12,4 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "reconbot.py"]
+ENV PYTHONPATH="${PYTHONPATH}:/app"
+
+CMD ["python", "-m", "reconbot.main"]

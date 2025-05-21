@@ -29,6 +29,7 @@ _html_template = '''<!DOCTYPE html>
         .score-F { color: #c0392b; }
     </style>
 </head>
+
 <body>
     <h1>Reporte de Seguridad</h1>
     <div class="section">
@@ -57,5 +58,18 @@ _html_template = '''<!DOCTYPE html>
         {% endif %}
     </div>
     {% endfor %}
+    </head>
+    <div class="section">
+        <h2>Análisis Semántico (DeepSeek)</h2>
+        {% if report.security_analysis.semantic and report.security_analysis.semantic.resultado %}
+            <p>{{ report.security_analysis.semantic.resultado }}</p>
+        {% elif report.security_analysis.semantic and report.security_analysis.semantic.error %}
+            <p>Error durante el análisis: {{ report.security_analysis.semantic.error }}</p>
+        {% else %}
+    <p>No se obtuvo análisis semántico.</p>
+{% endif %}
+
+    </div>
+
 </body>
 </html>'''

@@ -84,7 +84,7 @@ Formatos disponibles: html, json, console
 
 Este proyecto está bajo Licencia GPLv3.
 
-Copyright (C) 2023 Yoyiuwu23
+Copyright (C) 2025 Yoyiuwu23
 
 Este programa es software libre: puedes redistribuirlo y/o modificar
 bajo los términos de la GNU General Public License.
